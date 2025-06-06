@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz A</title>
+    <link rel="icon" href="logo.jpeg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .striped-bg {
+        background: repeating-linear-gradient(
+            45deg,
+            rgb(246, 46, 46), red 20%,
+            rgb(64, 64, 244) 20%, rgb(74, 74, 234) 40%,
+            rgb(70, 241, 70) 40%, rgb(70, 254, 70) 60%,
+            rgb(247, 247, 74) 60%, rgb(247, 247, 86) 80%,
+            rgb(248, 68, 248) 80%, rgb(247, 74, 247) 100%
+        );
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body class="striped-bg">
+    <h1 class="text-center text-dark" >Quiz  Competition</h1>
+    <spam class="bg-success text-white p-3 float-end rounded-pill my-4" id="timer">20:00</spam>
+
+    <form class="form"  id="myform" action="http://localhost:8080/quiz.jsp" method="post">
+        <div class="container text-center my-3">
+            <!--
+            <input  class="form-input" type="text" list="Random">
+            <datalist id="Random">
+                <option value="column 1"></option>
+                <option value="column 2"></option>
+                <option value="column 3"></option>
+                <option value="column 4"></option>
+            </datalist> -->
+            <select name=""  class="form-select my-3">
+                <option value="" default >Choose column</option>
+                <option value="">A</option>
+                <option value="">B</option>
+                <option value="">C</option>
+                <option value="">D</option>
+            </select>
+            <select name=""  class="form-select" id="">
+                <option value="" default >Choose bench number</option>
+                <option value="">B1</option>
+                <option value="">B2</option>
+                <option value="">B3</option>
+                <option value="">B4</option>
+            </select>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q1" >What is overfitting in machine learning?</p>
+            <input type="radio" class="form-check-input mx-2" name="q1" value="When a model performs well on both training and test data" required>When a model performs well on both training and test data<br>
+            <input type="radio" class="form-check-input mx-2" name="q1" value="When a model learns noise in the training data instead of the actual pattern" required>When a model learns noise in the training data instead of the actual pattern<br>
+            <input type="radio" class="form-check-input mx-2" name="q1" value="When a model is too simple to capture the data's complexity" required>When a model is too simple to capture the data's complexity<br>
+            <input type="radio" class="form-check-input mx-2" name="q1" value="When a model has too few parameters" required>When a model has too few parameters<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q2">Which algorithm is commonly used for classification tasks?</p>
+            <input type="radio" class="form-check-input mx-2" name="q2" value="K-Means" required>K-Means<br>
+            <input type="radio" class="form-check-input mx-2" name="q2" value="Linear Regression" required>Linear Regression<br>
+            <input type="radio" class="form-check-input mx-2" name="q2" value="Logistic Regression" required>Logistic Regression<br>
+            <input type="radio" class="form-check-input mx-2" name="q2" value="Principal Component Analysis (PCA)" required>Principal Component Analysis (PCA)<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q3">What does cross-validation help achieve in ML?</p>
+            <input type="radio" class="form-check-input mx-2" name="q3" value="Reduces computational cost" required>Reduces computational cost<br>
+            <input type="radio" class="form-check-input mx-2" name="q3" value="Evaluates model performance on unseen data" required>Evaluates model performance on unseen data<br>
+            <input type="radio" class="form-check-input mx-2" name="q3" value="Increases model complexity" required>Increases model complexity<br>
+            <input type="radio" class="form-check-input mx-2" name="q3" value="Removes outliers from the dataset" required>Removes outliers from the dataset<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q4">What is the purpose of regularization in ML?</p>
+            <input type="radio" class="form-check-input mx-2" name="q4" value="To increase model accuracy" required>To increase model accuracy<br>
+            <input type="radio" class="form-check-input mx-2" name="q4" value="To prevent overfitting by penalizing large coefficients" required>To prevent overfitting by penalizing large coefficients<br>
+            <input type="radio" class="form-check-input mx-2" name="q4" value="To speed up training" required>To speed up training<br>
+            <input type="radio" class="form-check-input mx-2" name="q4" value="To reduce the dataset size" required>To reduce the dataset size<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q5">Which metric is best for evaluating an imbalanced dataset?</p>
+            <input type="radio" class="form-check-input mx-2" name="q5" value="Accuracy" required>Accuracy<br>
+            <input type="radio" class="form-check-input mx-2" name="q5" value="F1-Score" required>F1-Score<br>
+            <input type="radio" class="form-check-input mx-2" name="q5" value="Mean Squared Error" required>Mean Squared Error<br>
+            <input type="radio" class="form-check-input mx-2" name="q5" value="R-squared" required>R-squared<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q6">What is the primary goal of a decision tree?</p>
+            <input type="radio" class="form-check-input mx-2" name="q6" value="To minimize variance in the dataset" required>To minimize variance in the dataset<br>
+            <input type="radio" class="form-check-input mx-2" name="q6" value="To split data into regions based on feature values" required>To split data into regions based on feature values<br>
+            <input type="radio" class="form-check-input mx-2" name="q6" value="To perform dimensionality reduction" required>To perform dimensionality reduction<br>
+            <input type="radio" class="form-check-input mx-2" name="q6" value="To cluster similar data points" required>To cluster similar data points<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q7">What does the "bias-variance tradeoff" refer to?</p>
+            <input type="radio" class="form-check-input mx-2" name="q7" value="Balancing model complexity and generalization" required>Balancing model complexity and generalization<br>
+            <input type="radio" class="form-check-input mx-2" name="q7" value="Trading accuracy for speed" required>Trading accuracy for speed<br>
+            <input type="radio" class="form-check-input mx-2" name="q7" value="Adjusting hyperparameters manually" required>Adjusting hyperparameters manually<br>
+            <input type="radio" class="form-check-input mx-2" name="q7" value="Choosing between supervised and unsupervised learning" required>Choosing between supervised and unsupervised learning<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q8">Which of these is an ensemble learning method?</p>
+            <input type="radio" class="form-check-input mx-2" name="q8" value="Random Forest" required>Random Forest<br>
+            <input type="radio" class="form-check-input mx-2" name="q8" value="K-Nearest Neighbors" required>K-Nearest Neighbors<br>
+            <input type="radio" class="form-check-input mx-2" name="q8" value="Support Vector Machine" required>Support Vector Machine<br>
+            <input type="radio" class="form-check-input mx-2" name="q8" value="Naive Bayes" required>Naive Bayes<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q9">What is the purpose of a confusion matrix?</p>
+            <input type="radio" class="form-check-input mx-2" name="q9" value="To visualize feature importance" required>To visualize feature importance<br>
+            <input type="radio" class="form-check-input mx-2" name="q9" value="To evaluate classification performance" required>To evaluate classification performance<br>
+            <input type="radio" class="form-check-input mx-2" name="q9" value="To reduce dimensionality" required>To reduce dimensionality<br>
+            <input type="radio" class="form-check-input mx-2" name="q9" value="To normalize data" required>To normalize data<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q10">What does gradient descent optimize?</p>
+            <input type="radio" class="form-check-input mx-2" name="q10" value="The loss function" required>The loss function<br>
+            <input type="radio" class="form-check-input mx-2" name="q10" value="The dataset size" required>The dataset size<br>
+            <input type="radio" class="form-check-input mx-2" name="q10" value="The number of features" required>The number of features<br>
+            <input type="radio" class="form-check-input mx-2" name="q10" value="The model's runtime" required>The model's runtime<br>
+        </div>
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q11">How do you create a list comprehension in Python?</p>
+            <input type="radio" class="form-check-input mx-2" name="q11" value="[x for x in range(5)]" required>[x for x in range(5)]<br>
+            <input type="radio" class="form-check-input mx-2" name="q11" value="{x for x in range(5)}" required>{x for x in range(5)}<br>
+            <input type="radio" class="form-check-input mx-2" name="q11" value="(x for x in range(5))" required>(x for x in range(5))<br>
+            <input type="radio" class="form-check-input mx-2" name="q11" value="[x for i in range(5)]" required>[x for  in range(5)]<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q12">What does the lambda keyword do in Python?</p>
+            <input type="radio" class="form-check-input mx-2" name="q12" value="Defines a named function" required>Defines a named function<br>
+            <input type="radio" class="form-check-input mx-2" name="q12" value="Creates an anonymous function" required>Creates an anonymous function<br>
+            <input type="radio" class="form-check-input mx-2" name="q12" value="Imports a module" required>Imports a module<br>
+            <input type="radio" class="form-check-input mx-2" name="q12" value="Declares a class" required>Declares a class<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q13">Which method removes the last element from a list?</p>
+            <input type="radio" class="form-check-input mx-2" name="q13" value="pop()" required>pop()<br>
+            <input type="radio" class="form-check-input mx-2" name="q13" value="remove()" required>remove()<br>
+            <input type="radio" class="form-check-input mx-2" name="q13" value="append()" required>append()<br>
+            <input type="radio" class="form-check-input mx-2" name="q13" value="delete()" required>delete()<br>
+        </div>
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q14">What happens in a circular queue when the rear pointer reaches the end?</p>
+            <input type="radio" class="form-check-input mx-2" name="q14" value="It stops adding elements" required>It stops adding elements<br>
+            <input type="radio" class="form-check-input mx-2" name="q14" value="It wraps around to the beginning" required>It wraps around to the beginning<br>
+            <input type="radio" class="form-check-input mx-2" name="q14" value="It doubles the queue size" required>It doubles the queue size<br>
+            <input type="radio" class="form-check-input mx-2" name="q14" value="It throws an error" required>It throws an error<br>
+        </div>
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q15">How do you handle exceptions in Python?</p>
+            <input type="radio" class="form-check-input mx-2" name="q15" value="Using if-else" required>Using if-else<br>
+            <input type="radio" class="form-check-input mx-2" name="q15" value="Using try-except" required>Using try-except<br>
+            <input type="radio" class="form-check-input mx-2" name="q15" value="Using while loops" required>Using while loops<br>
+            <input type="radio" class="form-check-input mx-2" name="q15" value="Using def" required>Using def<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q16">What does the zip() function do?</p>
+            <input type="radio" class="form-check-input mx-2" name="q16" value="Combines two or more iterables into tuples" required>Combines two or more iterables into tuples<br>
+            <input type="radio" class="form-check-input mx-2" name="q16" value="Splits a list into chunks" required>Splits a list into chunks<br>
+            <input type="radio" class="form-check-input mx-2" name="q16" value="Removes duplicates from a list" required>Removes duplicates from a list<br>
+            <input type="radio" class="form-check-input mx-2" name="q16" value="Sorts a list" required>Sorts a list<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q17">Which of these is NOT a valid way to open a file in Python?</p>
+            <input type="radio" class="form-check-input mx-2" name="q17" value="open(&quot;file.txt&quot;, &quot;r&quot;)" required>open("file.txt", "r")<br>
+            <input type="radio" class="form-check-input mx-2" name="q17" value="open(&quot;file.txt&quot;, &quot;w&quot;)" required>open("file.txt", "w")<br>
+            <input type="radio" class="form-check-input mx-2" name="q17" value="open(&quot;file.txt&quot;, &quot;x&quot;)" required>open("file.txt", "x")<br>
+            <input type="radio" class="form-check-input mx-2" name="q17" value="open(&quot;file.txt&quot;, &quot;z&quot;)" required>open("file.txt", "z")<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q18">What does the *args parameter allow in a function?</p>
+            <input type="radio" class="form-check-input mx-2" name="q18" value="Passing a fixed number of arguments" required>Passing a fixed number of arguments<br>
+            <input type="radio" class="form-check-input mx-2" name="q18" value="Passing a variable number of positional arguments" required>Passing a variable number of positional arguments<br>
+            <input type="radio" class="form-check-input mx-2" name="q18" value="Passing keyword-only arguments" required>Passing keyword-only arguments<br>
+            <input type="radio" class="form-check-input mx-2" name="q18" value="Passing a dictionary" required>Passing a dictionary<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q19">How do you import a specific function from a module?</p>
+            <input type="radio" class="form-check-input mx-2" name="q19" value="import module.function" required>import module.function<br>
+            <input type="radio" class="form-check-input mx-2" name="q19" value="from module import function" required>from module import function<br>
+            <input type="radio" class="form-check-input mx-2" name="q19" value="module.import(function)" required>module.import(function)<br>
+            <input type="radio" class="form-check-input mx-2" name="q19" value="function from module import" required>function from module import<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q20">What does the join() method do with strings?</p>
+            <input type="radio" class="form-check-input mx-2" name="q20" value="Splits a string into a list" required>Splits a string into a list<br>
+            <input type="radio" class="form-check-input mx-2" name="q20" value="Combines a list of strings into one string" required>Combines a list of strings into one string<br>
+            <input type="radio" class="form-check-input mx-2" name="q20" value="Replaces characters in a string" required>Replaces characters in a string<br>
+            <input type="radio" class="form-check-input mx-2" name="q20" value="Counts occurrences of a substring" required>Counts occurrences of a substring<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q21">What is the time complexity of searching in a balanced binary search tree?</p>
+            <input type="radio" class="form-check-input mx-2" name="q21" value="O(n)" required>O(n)<br>
+            <input type="radio" class="form-check-input mx-2" name="q21" value="O(log n)" required>O(log n)<br>
+            <input type="radio" class="form-check-input mx-2" name="q21" value="O(n²)" required>O(n²)<br>
+            <input type="radio" class="form-check-input mx-2" name="q21" value="O(1)" required>O(1)<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q22">Which data structure uses LIFO (Last In, First Out)?</p>
+            <input type="radio" class="form-check-input mx-2" name="q22" value="Queue" required>Queue<br>
+            <input type="radio" class="form-check-input mx-2" name="q22" value="Stack" required >Stack<br>
+            <input type="radio" class="form-check-input mx-2" name="q22" value="Linked List" required>Linked List<br>
+            <input type="radio" class="form-check-input mx-2" name="q22" value="Heap" required>Heap<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q23">What is a key characteristic of a hash table?</p>
+            <input type="radio" class="form-check-input mx-2" name="q23" value="Elements are sorted" required>Elements are sorted<br>
+            <input type="radio" class="form-check-input mx-2" name="q23" value="Constant-time average case lookup" required>Constant-time average case lookup<br>
+            <input type="radio" class="form-check-input mx-2" name="q23" value="Uses a tree structure" required>Uses a tree structure<br>
+            <input type="radio" class="form-check-input mx-2" name="q23" value="Allows duplicate keys" required>Allows duplicate keys<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q24">In a singly linked list, what is the time complexity to access the last element?</p>
+            <input type="radio" class="form-check-input mx-2" name="q24" value="O(1)" required>O(1)<br>
+            <input type="radio" class="form-check-input mx-2" name="q24" value="O(n)" required>O(n)<br>
+            <input type="radio" class="form-check-input mx-2" name="q24" value="O(log n)" required>O(log n)<br>
+            <input type="radio" class="form-check-input mx-2" name="q24" value="O(n²)" required>O(n²)<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q25">Which of these is NOT a type of tree traversal?</p>
+            <input type="radio" class="form-check-input mx-2" name="q25" value="Inorder" required>Inorder<br>
+            <input type="radio" class="form-check-input mx-2" name="q25" value="Preorder" required>Preorder<br>
+            <input type="radio" class="form-check-input mx-2" name="q25" value="Postorder" required>Postorder<br>
+            <input type="radio" class="form-check-input mx-2" name="q25" value="Misorder" required>Misorder<br>
+        </div>
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q26">What is the primary purpose of the OSI model?</p>
+            <input type="radio" class="form-check-input mx-2" name="q26" value="To provide a framework for understanding network interactions" required>To provide a framework for understanding network interactions<br>
+            <input type="radio" class="form-check-input mx-2" name="q26" value="To define the physical characteristics of network cables" required>To define the physical characteristics of network cables<br>
+            <input type="radio" class="form-check-input mx-2" name="q26" value="To ensure data is encrypted during transmission" required>To ensure data is encrypted during transmission<br>
+            <input type="radio" class="form-check-input mx-2" name="q26" value="To manage IP address allocation" required>To manage IP address allocation<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q27">Which protocol is used to resolve IP addresses to MAC addresses?</p>
+            <input type="radio" class="form-check-input mx-2" name="q27" value="ARP" required>ARP<br>
+            <input type="radio" class="form-check-input mx-2" name="q27" value="RARP" required>RARP<br>
+            <input type="radio" class="form-check-input mx-2" name="q27" value="ICMP" required>ICMP<br>
+            <input type="radio" class="form-check-input mx-2" name="q27" value="DNS" required>DNS<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q28">What is the maximum length of a CAT5e Ethernet cable segment?</p>
+            <input type="radio" class="form-check-input mx-2" name="q28" value="100 meters" required>100 meters<br>
+            <input type="radio" class="form-check-input mx-2" name="q28" value="200 meters" required>200 meters<br>
+            <input type="radio" class="form-check-input mx-2" name="q28" value="300 meters" required>300 meters<br>
+            <input type="radio" class="form-check-input mx-2" name="q28" value="400 meters" required>400 meters<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q29">Which of the following is a characteristic of a VPN?</p>
+            <input type="radio" class="form-check-input mx-2" name="q29" value="It provides a direct connection to the internet" required>It provides a direct connection to the internet<br>
+            <input type="radio" class="form-check-input mx-2" name="q29" value="It encrypts data for secure transmission" required>It encrypts data for secure transmission<br>
+            <input type="radio" class="form-check-input mx-2" name="q29" value="It uses public IP addresses exclusively" required>It uses public IP addresses exclusively<br>
+            <input type="radio" class="form-check-input mx-2" name="q29" value="It requires a static IP address" required>It requires a static IP address<br>
+        </div>
+        
+        <div class="container p-3 bg-light border border-dark mb-2 rounded">
+            <p class="q30">What is the function of a router in a network?</p>
+            <input type="radio" class="form-check-input mx-2" name="q30" value="To connect devices within the same network" required>To connect devices within the same network<br>
+            <input type="radio" class="form-check-input mx-2" name="q30" value="To forward data packets between different networks" required>To forward data packets between different networks<br>
+            <input type="radio" class="form-check-input mx-2" name="q30" value="To amplify signals over long distances" required>To amplify signals over long distances<br>
+            <input type="radio" class="form-check-input mx-2" name="q30" value="To provide a physical connection to the internet" required>To provide a physical connection to the internet<br>
+        </div>
+        <div class="container text-center">
+            <input type="submit" class="btn btn-success m-3 px-4 ">
+        </div>
+    </form>
+
+        
+</body>
+<script src="javascrpit.js"></script>
+</html>
